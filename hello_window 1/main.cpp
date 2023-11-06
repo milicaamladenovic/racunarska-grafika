@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "glad/include/glad/glad.h"
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -42,7 +42,7 @@ int main() {
 
     //sada ucitavamo sve OpenGL funkcije koristeci glad biblioteku
 
-    if(gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+    if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
         std::cout << "Failed to init GLAD\n";
         glfwTerminate();
         return EXIT_FAILURE;
